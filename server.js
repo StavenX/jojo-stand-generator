@@ -4,7 +4,7 @@ const port = process.env.PORT || '8080';
 
 // Set up the EJS template engine
 app.set('view engine', 'ejs');
-app.set('views', 'views'); // The directory storing the template files
+app.set('views', './views'); // The directory storing the template files
 
 /* Homepage */
 app.get('/', (req, res) => {
@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log('Server listening on port ' + port);
+    console.log('Open in your browser at http://localhost:' + port);
 });
 
 function generateStandName() {
