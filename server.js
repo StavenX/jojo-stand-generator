@@ -13,6 +13,7 @@ app.set('views', './views'); // The directory storing the template files
 
 /* Homepage */
 app.get('/', (req, res) => {
+        stand_name: generateStandName(),
     res.render('pages/index', {
         stand_name: scripts.generateStandName(),
         stand_desc: scripts.generateStandDescription()
