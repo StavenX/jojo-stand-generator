@@ -1,4 +1,5 @@
 const express = require('express');
+const favicon = require('serve-favicon');
 const scripts = require("./scripts");
 
 /* Use either application-environment port or specified port */
@@ -10,6 +11,8 @@ const app = express();
 /* Set up the EJS template engine */
 app.set('view engine', 'ejs');
 app.set('views', './views'); // The directory storing the template files
+
+app.use(favicon(__dirname + '/images/favicon.ico'));
 
 /* Homepage */
 app.get('/', (req, res) => {
